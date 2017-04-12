@@ -167,5 +167,41 @@
                 "valid": false
             }
         ]
+    },
+    {
+        "description": "indirect ref within remote ref",
+        "schema": {
+            "$ref": "http://localhost:1234/subSchemas.json#/indirectRefToInteger"
+        },
+        "tests": [
+            {
+                "description": "indirect ref within ref valid",
+                "data": 1,
+                "valid": true
+            },
+            {
+                "description": "indirect ref within ref invalid",
+                "data": "a",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "external ref within remote ref",
+        "schema": {
+            "$ref": "http://localhost:1234/subSchemas.json#/refToExternalInteger"
+        },
+        "tests": [
+            {
+                "description": "external ref within ref valid",
+                "data": 1,
+                "valid": true
+            },
+            {
+                "description": "external ref within ref invalid",
+                "data": "a",
+                "valid": false
+            }
+        ]
     }
 ]
